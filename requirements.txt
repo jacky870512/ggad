@@ -1,0 +1,2 @@
+requests
+tenacity  # 如果你用了 retry
