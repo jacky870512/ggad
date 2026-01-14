@@ -7,7 +7,7 @@ from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_excep
 # ==================== 配置區 ====================
 WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")  # 建議用環境變數！不要硬寫
 if not WEBHOOK_URL:
-    WEBHOOK_URL = "https://discord.com/api/webhooks/你的完整網址"  # 測試時臨時用，之後刪除
+    WEBHOOK_URL = "https://discordapp.com/api/webhooks/1460271199341904025/OzgSEIgrXSsME-mVpdtsXz1oGp5sR56Ncqa-z5YmmrpGgnZNw55RXhSWDAbroCbaHavG"  # 測試時臨時用，之後刪除
 
 API_URL = "https://api.exptech.dev/v1/earthquake?type=report"
 CHECK_INTERVAL = 12  # 秒，建議 10~15 秒，避免過載
@@ -125,5 +125,6 @@ while True:
     except Exception as e:
         print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 主迴圈錯誤: {e}")
         time.sleep(30)  # 重大錯誤等久一點
+
 
     time.sleep(CHECK_INTERVAL)
